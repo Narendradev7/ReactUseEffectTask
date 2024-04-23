@@ -4,7 +4,9 @@
 // import FormComponent from "./Components/Functionality/forms/forms";
 // import ImageComponent from "./Components/Functionality/image/image"
 
-import ListingComp from "./Components/Functionality/Lists2/listcomponent";
+// import ListingComp from "./Components/Functionality/Lists2/listcomponent";
+
+import NestedLists from "./Components/Functionality/Lists2/nestedlists";
 
 const Abppl = () => {
 
@@ -24,7 +26,8 @@ const Abppl = () => {
 
     <div>
           <h1>Some of the best Teams in the IPL</h1>
-          <ListingComp></ListingComp>
+          
+          <NestedLists></NestedLists>
 
 
     </div>
