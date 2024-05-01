@@ -8,7 +8,7 @@
                         {
                             name : "Chennai Super Kings",
                             image : "https://pabitraeditography.com/wp-content/uploads/2023/03/full-hd-csk-wallpaper8-min-537x1024.jpg",
-                            Staff :["mike hussey","steven fleming"],
+                            Staff :["Mike Hussey","Steven Fleming"],
                             totalscore:1000,
                             Team :{
                                 Batsmen : ["Ruturaj (C)","Rachin","Dary Michell","Shivam Dube","Rahane","Dhoni (wk)"],
