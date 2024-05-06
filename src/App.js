@@ -17,9 +17,11 @@
 // import ButtonComponent from "./Components/Functionality/button/buttonprop";
 // import FakeStore from "./Components/Functionality/fakestoreapi/fakestoreapi";
 
-import Counter from "./Components/class/counter/counter";
-import ShopingCounter from "./Components/class/Counterforshopping/shoppingcounter";
-import Timer from "./Components/class/timer/timer";
+import TodoComponent from "./Components/class/todolist/todolist";
+
+// import Counter from "./Components/class/counter/counter";
+// import ShopingCounter from "./Components/class/Counterforshopping/shoppingcounter";
+// import Timer from "./Components/class/timer/timer";
 
 // const Abppl = () => {
 
@@ -292,12 +294,13 @@ const Abppl = () => {
 
 return (
         <div>
-           <><Timer></Timer></>
+           {/* <><Timer></Timer></> */}
            <>
-           <Counter></Counter>
+           {/* <Counter></Counter> */}
            </>
            <>
-           <ShopingCounter></ShopingCounter>
+           {/* <ShopingCounter></ShopingCounter> */}
+           <TodoComponent></TodoComponent>
            </>
            
         </div>
