@@ -16,9 +16,7 @@
 // import "./App.css";
 // import ButtonComponent from "./Components/Functionality/button/buttonprop";
 // import FakeStore from "./Components/Functionality/fakestoreapi/fakestoreapi";
-
-import TodoComponent from "./Components/class/todolist/todolist";
-
+// import TodoComponent from "./Components/class/todolist/todolist";
 // import Counter from "./Components/class/counter/counter";
 // import ShopingCounter from "./Components/class/Counterforshopping/shoppingcounter";
 // import Timer from "./Components/class/timer/timer";
@@ -282,29 +280,39 @@ import TodoComponent from "./Components/class/todolist/todolist";
 // export default Abppl;
 
 
-
-
-
-
-
-
-const Abppl = () => {
+// const Abppl = () => {
 
  
 
-return (
-        <div>
-           {/* <><Timer></Timer></> */}
-           <>
-           {/* <Counter></Counter> */}
-           </>
-           <>
-           {/* <ShopingCounter></ShopingCounter> */}
-           <TodoComponent></TodoComponent>
-           </>
+// return (
+//         <div>
+//            {/* <><Timer></Timer></> */}
+//            <>
+//            {/* <Counter></Counter> */}
+//            </>
+//            <>
+//            {/* <ShopingCounter></ShopingCounter> */}
+//            <TodoComponent></TodoComponent>
+//            </>
            
-        </div>
-)
+//         </div>
+// )
+// }
+
+// export default Abppl;
+
+
+import Mounting from "./Components/class/lifecycle/mounting/mounting"
+// import TodoComponent from "./components/class/todo/todo"
+
+const App = () => {
+  return(
+    <div>
+<Mounting  color={"green"}  />
+
+    </div>
+ 
+  )
 }
 
-export default Abppl;
+export default App
