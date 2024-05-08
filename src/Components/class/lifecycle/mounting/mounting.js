@@ -56,7 +56,7 @@ class Mounting extends Component {
         >
           {this.state.products.length > 0 ? (
             this.state.products.map((eachProduct) => {
-              const { title } = eachProduct;
+            //   const { this.title } = eachProduct;
               return (
                 <>
                   <Card product={eachProduct} />

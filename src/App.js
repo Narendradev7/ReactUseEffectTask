@@ -21,6 +21,7 @@
 // import ShopingCounter from "./Components/class/Counterforshopping/shoppingcounter";
 // import Timer from "./Components/class/timer/timer";
 
+
 // const Abppl = () => {
 
 //   const buttonArray =[
@@ -51,7 +52,7 @@
 // ]
 
 //   return (
-//     // <div> 
+//     // <div>
 //     //   <h1>Narendra</h1>
 //     //   <Buttoncomponent></Buttoncomponent>
 //     //   <h1>lists</h1>
@@ -66,9 +67,8 @@
 
 //     // <div>
 //     //       <h1>Some of the best Teams in the IPL</h1>
-          
-//     //       <NestedLists></NestedLists>
 
+//     //       <NestedLists></NestedLists>
 
 //     // </div>
 
@@ -87,7 +87,6 @@
 //       //  <CarouselExample></CarouselExample>
 
 //       //   </div>
-
 
 //       // <div>
 //       //   <ButtonComponent  buttonText={"LOGIN"} bgColor={"red"}  color={"Black"} buttonProperties = {{
@@ -111,29 +110,24 @@
 //             return(
 
 //               <ButtonComponent  key ={id} buttonText={text} bgColor={bgColor} color={color} buttonProperties={
-//                { 
-                
+//                {
+
 //                 height :height,
 //                 width : width
-      
+
 //               }
 //               }
-              
+
 //               />
 //             )
 //           })
 //         }
 //       </div>
 
-    
-    
-
 //   )
 // }
 
 // export default Abppl;
-
-
 
 // const Abppl = () => {
 
@@ -266,9 +260,9 @@
 //               fakeStore.map(foreachbutton =>{
 //                 const {title,price,image,category,id}=foreachbutton
 //                 return(
-    
+
 //                   <FakeStore  key ={id} title={title} prices={price} image={image} category={category}
-                  
+
 //                   />
 //                 )
 //               })
@@ -279,10 +273,7 @@
 
 // export default Abppl;
 
-
 // const Abppl = () => {
-
- 
 
 // return (
 //         <div>
@@ -294,25 +285,52 @@
 //            {/* <ShopingCounter></ShopingCounter> */}
 //            <TodoComponent></TodoComponent>
 //            </>
-           
+
 //         </div>
 // )
 // }
 
 // export default Abppl;
 
-
-import Mounting from "./Components/class/lifecycle/mounting/mounting"
+// import Mounting from "./Components/class/lifecycle/mounting/mounting"
 // import TodoComponent from "./components/class/todo/todo"
+// import { Component } from "react";
+// import UpdatingPhase from "./Components/class/lifecycle/updating/updating";
 
-const App = () => {
-  return(
-    <div>
-<Mounting  color={"green"}  />
+// class Appl extends Component {
+//         state={
+//                 color:"orange"
+//         }
 
-    </div>
- 
-  )
+//         changeColor=()=>{
+//         this.setState={
+//                 color:"yellow"
+//         }
+//         }
+//   render() {
+//     return (
+//       <div>
+//         <UpdatingPhase color={this.state.color}></UpdatingPhase>
+//         <button onClick={this.changeColor}>change color</button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default Appl;
+
+
+import { Component } from "react";
+import UnMounting from "./Components/class/lifecycle/unmounting/unmounting";
+
+
+class Appl extends Component {
+        
+  render() {
+    return (
+        <UnMounting></UnMounting>
+    );
+  }
 }
 
-export default App
+export default Appl;

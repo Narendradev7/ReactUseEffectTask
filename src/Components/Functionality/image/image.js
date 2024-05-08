@@ -1,8 +1,10 @@
-const ImageComponent = () => {
 
-    return (
-        <img src="https://t4.ftcdn.net/jpg/06/48/39/19/360_F_648391979_uMz6EwAlKNIJnK9r46UpTiM17nT8GuLl.jpg" alt="profesional"/>
+
+
+
+const ImageComponent=({src})=>{
+    return(
+        <img  src={src}  alt="bag" height={100} width={100} />
     )
 }
-
-export default ImageComponent;
+export default ImageComponent
