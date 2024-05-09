@@ -1,27 +1,41 @@
 import { Component } from "react";
+import Child from "./child";
 
 class Counter extends Component {
   state = {
-    count: 0,
-    message: "My Counter App",
-    buttonText: "Subscribe",
+    count: 10,
     isSubscribe: false,
+    subscribeText: "subscribe",
+    subscribedText: "subscribed",
+    products:[
+        {
+            id:1,
+            product:"laptop",
+            count:1
+        },
+        {
+            id:2,
+            product:"laptop2",
+            count:1
+        },
+    ]
   };
 
   changeAction = (action) => {
     switch (action) {
-      case "Increment":
+      case "INCREMENT":
         this.setState({
           count: this.state.count + 1,
         });
         break;
-      case "Decrement":
-        if (this.state.count > 0)
+      case "DECREMENT":
+        if (this.state.count > 0) {
           this.setState({
             count: this.state.count - 1,
           });
+        }
         break;
-      case "Reset":
+      case "RESET":
         this.setState({
           count: 0,
         });
@@ -31,49 +45,42 @@ class Counter extends Component {
     }
   };
 
-  subscribeAction = ()=>{
+  subscribeAction = () => {
     this.setState({
-        buttonText:"Subscribed",
-        isSubscribe:!this.state.isSubscribe
-    })
-  }
+      isSubscribe: !this.state.isSubscribe,
+    });
+  };
 
   render() {
+    console.log("Parent Rerender")
+    const { isSubscribe, subscribeText, subscribedText, count } = this.state;
     return (
       <>
-
-          <button onClick={this.subscribeAction}
-          
+        <button
+          onClick={this.subscribeAction}
           style={{
-            backgroundColor:this.state.isSubscribe?"red":"green"
+            backgroundColor: isSubscribe ? "green" : "red",
           }}
-          
-          >{
-          this.state.isSubscribe ?
-            "Subscribed":
-            "subscribe"
-          
-          }</button>
+        >
+          {!isSubscribe ? subscribeText : subscribedText}
+        </button>
 
-        {
-        this.state.isSubscribe && 
+        {isSubscribe && (
           <>
-            <h1>{this.state.message}</h1>
-            <h1>{this.state.count}</h1>
-
-            <button onClick={() => this.changeAction("Increment")}>
+            <h4>{count}</h4>
+            <button onClick={() => this.changeAction("INCREMENT")}>
               Increment
             </button>
-            <button onClick={() => this.changeAction("Decrement")}>
+            <button onClick={() => this.changeAction("DECREMENT")}>
               Decrement
             </button>
-            <button onClick={() => this.changeAction("Reset")}>Reset</button>
+            <button onClick={() => this.changeAction("RESET")}>Reset</button>
           </>
-        }
+        )}
+        <Child count={this.state.count}></Child>
       </>
     );
   }
 }
 
 export default Counter;
-

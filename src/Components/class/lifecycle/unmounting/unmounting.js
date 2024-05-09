@@ -39,6 +39,9 @@ export default UnMounting
 
 
 class Child extends Component{
+    componentWillUnmount(){
+
+    }
     render(){
         return(
             <>

@@ -321,16 +321,38 @@
 
 
 import { Component } from "react";
-import UnMounting from "./Components/class/lifecycle/unmounting/unmounting";
+import Productslisting from "./Components/class/lifecycle/Products/products";
+import Mounting from "./Components/class/lifecycle/mounting/mountings.js"
 
 
-class Appl extends Component {
-        
-  render() {
-    return (
-        <UnMounting></UnMounting>
-    );
+
+
+class App extends Component {
+  state={
+    color:"red"
   }
+
+   changeColor=()=>{
+    this.setState({
+      color:"blue"
+    })
+   }
+   render(){
+    return(
+      <div>
+        
+        <>
+          <Productslisting></Productslisting>
+          <Mounting></Mounting>
+        </>
+        
+  
+      </div>
+   
+    )
+
+   }
+ 
 }
 
-export default Appl;
+export default App

@@ -1,17 +1,15 @@
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { Component } from "react";
-import ImageComponent from "../../../Functionality/image/image";
+import ImageComponent from "../../../functional/image/image";
 
 
 
 class UpdatingPhase extends Component{
-
     state={
-        count:0,
+        count:1,
         color:"green",
-        products:[]
+        product:null
     }
-
     incrementAction=()=>{
         this.setState({
             count:this.state.count+1
@@ -20,58 +18,71 @@ class UpdatingPhase extends Component{
 
     static getDerivedStateFromProps(props) {
         console.log(props)
-            
+        // it changes the state based on the props over the time
+    
         console.log("getDerivedStateFromProps",props);
         return {
             color:props.color
         };
       }
-
       componentDidMount(){
-            document.title=`Count ${this.state.count}`
-            axios.get(`https://fakestoreapi.com/products/${this.state.count}`)
-            .then(response=>console.log(response))
-      }
-      componentDidUpdate(){
-            document.title=`Count ${this.state.count}`
-            axios.get(`https://fakestoreapi.com/products/${this.state.count}`)
-            .then(response=>{
-                if(response.status===200){
-                    this.setState({
-                        products:response.data
-                        
-                    })
-                }
-            })
-            
-      }
+        document.title=`Count ${this.state.count}`
+        axios.get(`https://fakestoreapi.com/products/${this.state.count}`)
+        .then(response=>{
+            if(response.status===200){
+                this.setState({
+                    product:response.data
+                })
+            }
+        })
 
-      shouldComponentUpdate(){
+
+      }
+    // componentDidUpdate(){
+    //     console.log("componentDidUpdate")
+    //     document.title=`Count ${this.state.count}`
+
+    //     axios.get(`https://fakestoreapi.com/products/${this.state.count}`)
+    //     .then(response=>{
+    //         if(response.status===200){
+    //             this.setState({
+    //                 product:response.data
+    //             })
+    //         }
+    //     })
+
+    // }
+
+    shouldComponentUpdate(){
         return true
-      }
+    }
 
+   getSnapshotBeforeUpdate=(props,state)=>{
+
+    console.log(state,"getSnapshotBeforeUpdate",props)
+    return null
+
+   }
     render(){
+        console.log("render")
         return(
             <>
-                <h1 style={{color:this.state.color}}>Updating Phase</h1>
-                <h3>{this.state.count}</h3>
-                <button onClick={this.incrementAction}>Click to increment</button>
-                
+            <h1 style={{color:this.state.color}} >Updating phase</h1>
+            <h3>{this.state.count}</h3>
+            <button  onClick={this.incrementAction} >Click to increment</button>
+            {
+                this.state.product ?
+                <>
 
-                {
-                    this.state.products ?
-                    <>
-                    <h2>{this.state.products.title}</h2>
-                    <ImageComponent src={this.state.products.image}/>
-                    
-                    </>
-                    :
-                    null
-                }
+                <h2>{this.state.product.title}</h2>
+                <ImageComponent  src={this.state.product.image} />
+                </>
+                :
+                null
+            }
             </>
         )
     }
-
 }
 
-export default UpdatingPhase;
+export default UpdatingPhase
