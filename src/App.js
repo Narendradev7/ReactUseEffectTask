@@ -21,7 +21,6 @@
 // import ShopingCounter from "./Components/class/Counterforshopping/shoppingcounter";
 // import Timer from "./Components/class/timer/timer";
 
-
 // const Abppl = () => {
 
 //   const buttonArray =[
@@ -320,30 +319,54 @@
 // export default Appl;
 
 
+// import { Component } from "react";
+// import Productslisting from "./Components/class/lifecycle/Products/products";
+// import Mounting from "./Components/class/lifecycle/mounting/mountings.js"
+
+
+
+
+// class App extends Component {
+//   state={
+//     color:"red"
+//   }
+
+//    changeColor=()=>{
+//     this.setState({
+//       color:"blue"
+//     })
+//    }
+//    render(){
+//     return(
+//       <div>
+        
+//         <>
+//           <Productslisting></Productslisting>
+//           <Mounting></Mounting>
+//         </>
+        
+  
+//       </div>
+   
+//     )
+
+//    }
+ 
+// }
+
+// export default App
+
+
 import { Component } from "react";
-import Productslisting from "./Components/class/lifecycle/Products/products";
-import Mounting from "./Components/class/lifecycle/mounting/mountings.js"
-
-
-
+import Timer from "./Components/Functionality/timer/timer";
 
 class App extends Component {
-  state={
-    color:"red"
-  }
-
-   changeColor=()=>{
-    this.setState({
-      color:"blue"
-    })
-   }
    render(){
     return(
       <div>
         
         <>
-          <Productslisting></Productslisting>
-          <Mounting></Mounting>
+          <Timer></Timer>
         </>
         
   
