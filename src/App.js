@@ -358,7 +358,9 @@
 
 
 import { Component } from "react";
-import Timer from "./Components/Functionality/timer/timer";
+// import LoginForm from "./Components/Functionality/form/loginForm";
+import RegistrationForm from "./Components/Functionality/form/registrationForm";
+// import Timer from "./Components/Functionality/timer/timer";
 
 class App extends Component {
    render(){
@@ -366,7 +368,8 @@ class App extends Component {
       <div>
         
         <>
-          <Timer></Timer>
+        {/* <LoginForm></LoginForm> */}
+        <RegistrationForm></RegistrationForm>
         </>
         
   
