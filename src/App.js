@@ -358,8 +358,9 @@
 
 
 import { Component } from "react";
+import UseEffect1 from "./Components/Functionality/useEffect/useEffectEx1";
 // import LoginForm from "./Components/Functionality/form/loginForm";
-import RegistrationForm from "./Components/Functionality/form/registrationForm";
+// import RegistrationForm from "./Components/Functionality/form/registrationForm";
 // import Timer from "./Components/Functionality/timer/timer";
 
 class App extends Component {
@@ -368,8 +369,7 @@ class App extends Component {
       <div>
         
         <>
-        {/* <LoginForm></LoginForm> */}
-        <RegistrationForm></RegistrationForm>
+          <UseEffect1></UseEffect1>
         </>
         
   
