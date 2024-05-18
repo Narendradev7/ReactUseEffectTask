@@ -1,24 +1,21 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./UseEffect1.css"; // Import CSS file for styling
+import "./UseEffect1.css"; 
 
 const UseEffect1 = () => {
     const [todos, setTodos] = useState([]);
     const [count, setCount] = useState(0);
     const [eachTodo, setEachTodo] = useState({});
-
-    // useEffect will trigger once (fetch data from server)
+    
     useEffect(() => {
         fetchData();
     }, []);
 
-    // useEffect will trigger every when count changes
     useEffect(() => {
         document.title = `Count ${count}`;
         fetchEachTodo();
     }, [count]);
 
-    // Function to fetch all todos from server
     const fetchData = async () => {
         const result = await axios.get("https://fakestoreapi.com/products");
         if (result.status === 200) {
@@ -26,7 +23,6 @@ const UseEffect1 = () => {
         }
     };
 
-    // Function to fetch todo based on the current count
     const fetchEachTodo = async () => {
         if (count >= 0 && count < todos.length) {
             const result = await axios.get(
@@ -38,7 +34,6 @@ const UseEffect1 = () => {
         }
     };
 
-    // Function to handle button click and update count
     const handleButtonClick = (index) => {
         setCount(index);
     };
@@ -54,7 +49,7 @@ const UseEffect1 = () => {
                     </button>
                 ))}
             </div>
-            {/* Display individual todo data if it exists */}
+
             {Object.keys(eachTodo).length > 0 ? (
                 <div className="product-details">
                     <h3>ID: {eachTodo.id}</h3>
